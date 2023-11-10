@@ -12,7 +12,6 @@ type User {
     lastName: String
     email: String
     reviews: [Review]
-    comments: [Comment]
 }
 type Review {
     _id: ID
@@ -28,13 +27,14 @@ type Query {
     mangas: [Manga]
     manga(_id: ID!): Manga
     review(_id: ID!): Review
-    user: User
+    users: [User]
+    user(_id: ID!): User
 }
 type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
-    addReview(rating: Number!, description: String, manga: ID!): Review
+    addReview(rating: Int!, description: String, manga: ID!): Review
 }
 `;
 

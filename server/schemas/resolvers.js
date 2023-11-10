@@ -1,4 +1,4 @@
-const { User, Review, Manga, Comment } = require('../models');
+const { User, Review, Manga } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 
 const resolvers = {
@@ -12,9 +12,12 @@ const resolvers = {
         review: async (parent, _id) => {
             return await Review.findById(_id);
         },
-        user: async (parent, args, context) => {
+        users: async () => {
+            return await User.find();
+        },
+        user: async (parent, context, _id) => {
             if (context.user) {
-                return await User.findById(context.user._id);
+                return await User.findById(_id);
             }
         }
     },
