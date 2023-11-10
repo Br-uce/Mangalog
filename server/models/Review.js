@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-const User = require('./User');
 // A Schema to hold all useful information for a Review, such as the Rating and possible comment for said rating.
 // Also needs to link to the Manga.
 const reviewSchema = new Schema({
