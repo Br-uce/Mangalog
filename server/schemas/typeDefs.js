@@ -3,7 +3,8 @@ type Manga {
     _id: ID
     title: String
     description: String
-    reviews: [Review]
+    avgRating: Int
+    reviewCount: Int
 }
 type User {
     _id: ID
@@ -14,10 +15,10 @@ type User {
     comments: [Comment]
 }
 type Review {
-
-}
-type Comment {
-
+    _id: ID
+    rating: Int
+    description: String
+    manga: Manga
 }
 type Auth {
     token: ID
@@ -33,7 +34,7 @@ type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
-    addReview(rating: Number!, description: String): Review
+    addReview(rating: Number!, description: String, manga: ID!): Review
 }
 `;
 

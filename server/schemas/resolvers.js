@@ -51,24 +51,16 @@ const resolvers = {
       
             return { token, user };
         },
+        // This needs to alter the Manga's avgRating and reviewCount as well.
         addReview: async (parent, reviewData, context) => {
             if (context.user) {
-              const review = new Review(reviewData);
+                const review = new Review(reviewData);
       
-              await User.findByIdAndUpdate(context.user._id, { $push: review });
-      
-              return review;
-            }
-      
-            throw AuthenticationError;
-        },
-        addComment: async (parent, commentData, context) => {
-            if (context.user) {
-              const comment = new Comment(commentData);
-      
-              await User.findByIdAndUpdate(context.user._id, { $push: comment });
-      
-              return comment;
+                await User.findByIdAndUpdate(context.user._id, { $push: review });
+            
+                await Manga.findByIdAndUpdate(reviewData.manga._id, {$push: review});
+
+                return review;
             }
       
             throw AuthenticationError;
