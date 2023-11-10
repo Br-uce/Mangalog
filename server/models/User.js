@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
 const Review = require('./Review');
-const Comment = require('./Comment');
 // Contains useful information for a user, such as their login credentials, their reviews and comments, etc.
 const userSchema = new Schema({
   firstName: {
@@ -27,7 +26,6 @@ const userSchema = new Schema({
     minlength: 5
   },
   reviews: [Review.schema],
-  comments: [Comment.schema],
 });
 
 // set up pre-save middleware to create password

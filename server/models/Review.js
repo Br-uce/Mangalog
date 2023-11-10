@@ -2,11 +2,10 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const User = require('./User');
-const Comment = require('./Comment');
-// A Schema to hold all useful information for a Review, such as the Rating, comment for said rating, User who submitted the review.
-// Possibly comments made in response to the review.
-const mangaSchema = new Schema({
-    Rating: {
+// A Schema to hold all useful information for a Review, such as the Rating and possible comment for said rating.
+// Also needs to link to the Manga.
+const reviewSchema = new Schema({
+    rating: {
         type: Number,
         required: true,
         min: 0,
@@ -16,10 +15,13 @@ const mangaSchema = new Schema({
     description: {
         type: String,
     },
-    user: User.schema,
-    comments: [Comment.Schema],
+    manga: {
+        type: Schema.Types.ObjectId,
+        ref: 'Manga',
+        required: true
+      }
 })
 
-const Review = mongoose.model('Review', userSchema);
+const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;
