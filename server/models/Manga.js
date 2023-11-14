@@ -11,12 +11,10 @@ const mangaSchema = new Schema({
     description: {
         type: String,
     },
-    // This has to update itself when a Review is added/removed.
     avgRating: {
         type: Number,
         default: 0,
     },
-    // This also has to update itself when a Review is added/removed.
     reviewCount: {
         type: Number,
         default: 0,

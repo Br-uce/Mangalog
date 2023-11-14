@@ -13,6 +13,7 @@ const reviewSchema = new Schema({
     },
     description: {
         type: String,
+        default: '',
     },
     manga: {
         type: Schema.Types.ObjectId,

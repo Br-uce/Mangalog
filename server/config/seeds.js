@@ -7,10 +7,11 @@ db.once('open', async () => {
     await cleanDB('User', 'users');
 
     // Begin seeding of Manga
+    // Due to the setup of pre-seeding, the avg Rating and reviewCounts are added in manually.
     const mangas = await Manga.insertMany([
-        {title: 'Test Manga 1', description: 'Short test description here.'},
-        {title: 'Test Manga 2', description: 'Shorter test description.'},
-        {title: 'Test Manga 3'},
+        {title: 'Test Manga 1', description: 'Short test description here.', avgRating: 3.5, reviewCount: 2},
+        {title: 'Test Manga 2', description: 'Shorter test description.', avgRating: 4, reviewCount: 1},
+        {title: 'Test Manga 3', avgRating: 3, reviewCount: 1},
     ]);
     console.log('Manga seeded.');
 
