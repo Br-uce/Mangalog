@@ -40,19 +40,16 @@ const resolvers = {
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
-      
             if (!user) {
               throw AuthenticationError;
             }
       
             const correctPw = await user.isCorrectPassword(password);
-      
             if (!correctPw) {
               throw AuthenticationError;
             }
       
             const token = signToken(user);
-      
             return { token, user };
         },
         // Currently setup to bypass Context, for server-only testing. Do not actually try to use for Client-side mutations.
@@ -73,20 +70,16 @@ const resolvers = {
                 await Manga.findByIdAndUpdate(mangaID, {avgRating: avgRating, reviewCount: reviewCount});
                 return review;
             //}
-      
+            
             throw AuthenticationError;
         },
         // Currently setup to bypass Context, for server-only testing. Do not actually try to use for Client-side mutations.
         removeReview: async(parent, reviewData, context) => {
             //if (context.user) {
-                console.log(reviewData);
                 const review = await Review.findByIdAndDelete(reviewData.reviewID);
-                console.log(review);
                 await User.findByIdAndUpdate(reviewData.userID, { $pull: { reviews: review } });
                 const mangaID = review.manga._id;
-                console.log(mangaID);
                 const manga = await Manga.findById(mangaID);
-                console.log(manga);
                 var reviewCount = manga.reviewCount;
                 const totalRating = manga.avgRating * reviewCount;
                 reviewCount--;

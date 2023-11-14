@@ -34,7 +34,7 @@ type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
-    addReview(rating: Int!, description: String, userID:ID!, manga: ID!): Review
+    addReview(rating: Int!, description: String, manga: ID!): Review
     removeReview(userID: ID!, reviewID: ID!): Review
 }
 `;
