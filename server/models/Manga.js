@@ -11,6 +11,9 @@ const mangaSchema = new Schema({
     description: {
         type: String,
     },
+    image: {
+        type: String,
+    },
     avgRating: {
         type: Number,
         default: 0,
