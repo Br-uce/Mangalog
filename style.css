@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+    background-color: rgb(228, 228, 251);
+}
+
+header {
+    background-color: rgb(44, 44, 119);
+    font-family: Optima;
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    text-align: center;
+    font-size: 500%;
+}
+
+nav {
+    background-color: rgb(72, 72, 176);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+nav a {
+    color: rgb(255, 255, 255);
+    font-family: Optima;
+    font-size: 170%;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+  display: block;  
+  font-size: 20px;
+  text-align: center;
+  padding: 20px 25px;
+  text-decoration: none;
+}
+
+ul li ul.genres li {
+    display: block;
+}
+
+ul li ul.genres {
+    display: none;
+    position: absolute;
+    background: rgb(72, 72, 176);
+    width: 100%;
+}
+
+ul li a:hover {
+    background: white;
+    color: rgb(44, 44, 119);
+    font-weight: 600;
+}
+
+ul li:hover ul.genres {
+    display: block;
+    color: rgb(72, 72, 176);
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.poster-description {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+  
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poster-description {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    width: 250px;
+    margin: 10px;
+}
+
+.card-image {
+    height: 150px;
+    margin-bottom: 15px;
+    background-size: cover;
+}
+
+.card-1 {
+    background-image: url(https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg);
+}
+
+.card-2 {
+    background-image: url(https://www.posteremporium.com/media/catalog/product/cache/6eaa364575089817f32fa4ebdb946095/1/6/160787.jpg);
+}
+
+.card-3 {
+    background-image: url(https://i5.walmartimages.com/seo/Attack-on-Titan-Season-4-Key-Visual-1-Wall-Poster-22-375-x-34-Framed_3e64167f-720f-4f39-922a-d35280715bf0.c98ba44c4219263c559ab408a23f5bcf.jpeg);
+}
+
+
+.card-4 {
+    background-image: url(https://i5.walmartimages.com/asr/afdab3a3-aeb2-4ced-a6f0-2a10140a0256.0e1ff64b1f2c5c3e2f08ee53f1cf3b41.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF;)
+}
+
+.card-5 {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6b5f8fec-3328-4c19-add0-70a21fcc356c/d789wgf-18402336-1b1d-4e8f-b1fd-645571402bd8.jpg/v1/fill/w_1024,h_1449,q_75,strp/death_note_poster_by_itachi_g_d789wgf-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ0OSIsInBhdGgiOiJcL2ZcLzZiNWY4ZmVjLTMzMjgtNGMxOS1hZGQwLTcwYTIxZmNjMzU2Y1wvZDc4OXdnZi0xODQwMjMzNi0xYjFkLTRlOGYtYjFmZC02NDU1NzE0MDJiZDguanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.A5G6_WAD6MTJlYmE4OvSSN6C4OsCu9xj0Oegb3zUJUI)
+}
+
+.card-6 {
+    background-image: url(https://www.posteremporium.com/media/catalog/product/cache/6eaa364575089817f32fa4ebdb946095/1/6/161414.jpg)
+}
+
+.card-7 {
+    background-image: url(https://www.yourdecoration.com/cdn/shop/products/grupo-erik-gpe5679-one-punch-man-saitama-poster-61x91-5cm.jpg?v=1694091718)
+}
+
+.card-8 {
+    background-image: url(https://i.etsystatic.com/45411754/r/il/60ad38/5324048784/il_fullxfull.5324048784_ohql.jpg)
+}
+
+.card-9 {
+    background-image: url(https://i5.walmartimages.com/seo/Bleach-Anime-Poster-Print-36-x-24_edae92b5-15bd-4771-a59b-c8f4d3084923.6bb4f7ce1b4ad1018f03265883056e5a.jpeg)
+}
+
+.card-10 {
+    background-image: url(https://cdn-uploads.gameblog.fr/img/news/406991_633178adb98e0.jpg)
+}
+
+.card h2,
+.card p {
+    padding: 10px;
+}
+
+.card a {
+    background-color: rgb(44, 44, 119);
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    margin: 20px 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.card:hover {
+    background-color: rgb(203, 203, 246);
+    color: white;
+}
+
+.a:hover {
+    color: white;
+}
